@@ -12,7 +12,7 @@ font.name = 'Arial'
 data_e_mes = input('Digite a data (ex: 23 de Maio): ')
 dia_semana_str = input('Digite o dia da semana (ex: terça, quarta, quinta, sexta): ')
 
-alunos_lista = ['Arthur Costa', 'Arthur Gabriel', 'Cristofer Fernandes', 'Kauã Henrique', 'Mariana Carolina', 'Nicolas Kenji', 'Jean Davi']
+alunos_lista = ['Arthur Costa', 'Arthur Gabriel', 'Cristofer Fernandes', 'Jean Davi', 'Kauã Henrique', 'Mariana Carolina', 'Nicolas Kenji']
 dia_semana = {}
 
 PATH_DEFAULT = '.\\database_json\\'
