@@ -54,8 +54,7 @@ def criar_corpo_documento(command_data, day, db, alunos):
             paragrafo.add_run('\n')
             numero_da_aula += 1
             lista_de_aulas.append(aula_iterada)
-            print(lista_de_aulas)
-            
+
         elif aula_iterada in lista_de_aulas:
             paragrafo.add_run(f'{numero_da_aula}° Aula: {aula_iterada}\n').bold = True
             paragrafo.add_run('continuação... \n').bold = True
