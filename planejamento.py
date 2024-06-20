@@ -12,7 +12,7 @@ day_week_str = input('Digite o dia da semana: ')
 alunos = ['Arthur Costa', 'Arthur Gabriel', 'Cristofer Fernandes', 'Kauã Henrique', 'Mariana Carolina', 'Nicolas Kenji', 'Jean Davi']
 day_week = {}
 
-PATH_DEFAULT = 'C:\\Users\\endry\\OneDrive\\Área de Trabalho\\Trabalho Planejamento Alunos\\database_json\\'
+PATH_DEFAULT = '.\\database_json\\'
 
 def load_database_aulas(day_obtido, path_padrao):
     path_padrao += f'{day_obtido}.json'
@@ -65,7 +65,7 @@ def criar_corpo_documento(command_data, day, db, alunos):
 
 def salvar_aula():
     document.add_page_break()
-    document.save(f'C:\\Users\\endry\\OneDrive\\Área de Trabalho\\Trabalho Planejamento Alunos\\planejamentos\\Londrina {data} {day_week_str}-feira.docx')
+    document.save(f'.\\planejamentos\\Londrina {data} {day_week_str}-feira.docx')
     print('Aula criada com sucesso!')
     exit()
 
