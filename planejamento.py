@@ -6,6 +6,7 @@ from sys import exit
 document = Document()
 font = document.styles['Normal'].font
 font.name = 'Arial'
+
 data_e_mes = input('Digite a data (ex: 23 de Maio): ')
 dia_semana_str = input('Digite o dia da semana (ex: terça, quarta, quinta, sexta): ')
 
@@ -41,14 +42,23 @@ def criar_corpo_documento(command_data, day, db, alunos):
     numero_da_aula = 1
     paragrafo = document.add_paragraph(f'Londrina, {command_data} - {day.capitalize()}-feira\n')
     paragrafo.add_run('\n')
+    lista_de_aulas = []
 
     while numero_da_aula <= 5:
         aula_iterada = db[f'Aula {numero_da_aula}']
-        if aula_iterada in ['Matemática', 'Português', 'Ciências']:
+        if aula_iterada in ['Matemática', 'Português', 'Ciências'] and aula_iterada not in lista_de_aulas:
             paragrafo.add_run(f'{numero_da_aula}° Aula: {aula_iterada}\n').bold = True
             paragrafo.add_run('Conteúdo: \n').bold = True
             paragrafo.add_run('Objetivo: \n').bold = True
             paragrafo.add_run('Metodologia: \n').bold = True
+            paragrafo.add_run('\n')
+            numero_da_aula += 1
+            lista_de_aulas.append(aula_iterada)
+            print(lista_de_aulas)
+            
+        elif aula_iterada in lista_de_aulas:
+            paragrafo.add_run(f'{numero_da_aula}° Aula: {aula_iterada}\n').bold = True
+            paragrafo.add_run('continuação... \n').bold = True
             paragrafo.add_run('\n')
             numero_da_aula += 1
         else:
