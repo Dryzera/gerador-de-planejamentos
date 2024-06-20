@@ -6,11 +6,11 @@ from sys import exit
 document = Document()
 font = document.styles['Normal'].font
 font.name = 'Arial'
-data = input('Digite a data: ')
-day_week_str = input('Digite o dia da semana: ')
+data_e_mes = input('Digite a data (ex: 23 de Maio): ')
+dia_semana_str = input('Digite o dia da semana (ex: terça, quarta, quinta, sexta): ')
 
-alunos = ['Arthur Costa', 'Arthur Gabriel', 'Cristofer Fernandes', 'Kauã Henrique', 'Mariana Carolina', 'Nicolas Kenji', 'Jean Davi']
-day_week = {}
+alunos_lista = ['Arthur Costa', 'Arthur Gabriel', 'Cristofer Fernandes', 'Kauã Henrique', 'Mariana Carolina', 'Nicolas Kenji', 'Jean Davi']
+dia_semana = {}
 
 PATH_DEFAULT = '.\\database_json\\'
 
@@ -65,10 +65,10 @@ def criar_corpo_documento(command_data, day, db, alunos):
 
 def salvar_aula():
     document.add_page_break()
-    document.save(f'.\\planejamentos\\Londrina {data} {day_week_str}-feira.docx')
+    document.save(f'.\\planejamentos\\Londrina {data_e_mes} {dia_semana_str}-feira.docx')
     print('Aula criada com sucesso!')
     exit()
 
-if data and day_week_str is not None:
-    day_week = catch_day_week(day_week_str)
-    criar_corpo_documento(data, day_week_str, day_week, alunos)
+if data_e_mes and dia_semana_str is not None:
+    dia_semana = catch_day_week(dia_semana_str)
+    criar_corpo_documento(data_e_mes, dia_semana_str, dia_semana, alunos_lista)
