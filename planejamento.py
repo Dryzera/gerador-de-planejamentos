@@ -72,3 +72,5 @@ def salvar_aula():
 if data_e_mes and dia_semana_str is not None:
     dia_semana = catch_day_week(dia_semana_str)
     criar_corpo_documento(data_e_mes, dia_semana_str, dia_semana, alunos_lista)
+else:
+    print('Você não me enviou algum valor.')
