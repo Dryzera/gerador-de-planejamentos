@@ -1,7 +1,6 @@
 from docx import Document
 from docx.shared import Inches
 import json
-import time
 import keyboard
 from sys import exit
 
