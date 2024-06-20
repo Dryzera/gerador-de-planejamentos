@@ -1,6 +1,8 @@
 from docx import Document
 from docx.shared import Inches
 import json
+import time
+import keyboard
 from sys import exit
 
 document = Document()
@@ -36,7 +38,7 @@ def catch_day_week(day):
         return day_week
     else:
         print(f'Você me enviou "{day}", aceito apenas: [terça, quarta, quinta ou sexta]')
-        exit()
+        close_program()
 
 def criar_corpo_documento(command_data, day, db, alunos):
     numero_da_aula = 1
@@ -76,7 +78,18 @@ def salvar_aula():
     document.add_page_break()
     document.save(f'.\\planejamentos\\Londrina {data_e_mes} {dia_semana_str}-feira.docx')
     print('Aula criada com sucesso!')
-    exit()
+    close_program()
+
+def close_program():
+    press = True
+    print('\n')
+    print('Pressione a tecla "F" para fechar...')
+    while press:
+        if keyboard.is_pressed('f'):
+            print('Fechando...')
+            time.sleep(1)
+            press = False
+            exit()
 
 if data_e_mes and dia_semana_str is not None:
     dia_semana = catch_day_week(dia_semana_str)
