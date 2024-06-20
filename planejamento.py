@@ -86,8 +86,6 @@ def close_program():
     print('Pressione a tecla "F" para fechar...')
     while press:
         if keyboard.is_pressed('f'):
-            print('Fechando...')
-            time.sleep(1)
             press = False
             exit()
 
