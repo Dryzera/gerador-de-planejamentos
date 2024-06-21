@@ -1,12 +1,5 @@
 # Ignorar a biblioteca virtual Python
 venv/
 
-# Ignorar arquivos de log
-*.log
-
 # Ignorar configurações do ambiente IDE
-.idea/
 .vscode/
-
-# Ignorar arquivos de ambiente
-.env
