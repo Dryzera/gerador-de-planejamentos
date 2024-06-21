@@ -24,3 +24,6 @@ __pycache__/
 
 # Ignorar arquivos de ambiente
 .env
+
+# Ignorar o arquivo de comentário .md
+.md
