@@ -9,7 +9,7 @@ font = document.styles['Normal'].font
 font.name = 'Arial'
 
 data_e_mes = input('Digite a data (ex: 23 de Maio): ')
-dia_semana_str = input('Digite o dia da semana (ex: terça, quarta, quinta, sexta): ')
+dia_semana_str = input('Digite o dia da semana (ex: terça, quarta, quinta, sexta): ').lower()
 
 alunos_lista = ['Arthur Costa', 'Arthur Gabriel', 'Cristofer Fernandes', 'Jean Davi', 'Kauã Henrique', 'Mariana Carolina', 'Nicolas Kenji']
 dia_semana = {}
